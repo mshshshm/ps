@@ -3,8 +3,7 @@ class Solution {
         var left: Int
         var right: Int
         var sum: Int
-        val results: MutableList<List<Int>> = mutableListOf()
-        val results2: MutableSet<List<Int>> = mutableSetOf()
+        val results: MutableSet<List<Int>> = mutableSetOf()
         Arrays.sort(nums)
         
         for (i in 0 until nums.size - 2) {
@@ -17,7 +16,7 @@ class Solution {
                 else if (sum > 0)
                     right -= 1;
                 else {
-                    results2.add(listOf(nums[i], nums[left], nums[right]))
+                    results.add(listOf(nums[i], nums[left], nums[right]))
                     
                     left += 1;
                     right -=1;
@@ -25,6 +24,6 @@ class Solution {
             }
                 
         }
-        return results2.toList()
+        return results.toList()
     }
 }
